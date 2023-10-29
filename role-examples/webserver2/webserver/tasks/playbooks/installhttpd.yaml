@@ -1,0 +1,5 @@
+- name: Install httpd
+  become: yes
+  yum:
+    name: "{{ webserver_package }}"
+    state: "{{ webserver_state }}"

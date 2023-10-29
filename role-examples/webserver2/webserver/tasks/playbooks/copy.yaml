@@ -1,0 +1,16 @@
+- name: copy index.html
+  become: yes
+  copy:
+    src:  index.html
+    dest: /var/www/html
+- name: copy  httpd.conf
+  become: yes
+  copy:
+    src: httpd.conf
+    dest: /etc/httpd/conf
+- name: copy sshd configuration
+  become: yes
+  template:
+    src: sshd_config.j2
+    dest: /etc/ssh
+  notify: sshd restart

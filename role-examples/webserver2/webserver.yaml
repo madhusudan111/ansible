@@ -1,0 +1,8 @@
+# Instructions to configure webserver
+---
+- hosts: localhost
+  roles:
+   - webserver
+  
+  
+  
